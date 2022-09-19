@@ -60,7 +60,6 @@ class MainActivityJogador : AppCompatActivity() {
           }
         }
 
-
     private fun setupDrawer(){
         navDrawer.setNavigationItemSelectedListener { menuItem ->
             drawer.closeDrawers()
