@@ -7,12 +7,12 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
-import com.ebac.jokenpo.databinding.ActivityMainResultBinding
+import com.ebac.jokenpo.databinding.ActivityPlayerBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 import com.google.android.material.snackbar.Snackbar
 
-class MainActivityResult : AppCompatActivity() {
+class PlayerActivity : AppCompatActivity() {
     lateinit var drawer: DrawerLayout
     lateinit var navDrawer: NavigationView
     lateinit var bottomNav: BottomNavigationView
@@ -20,8 +20,8 @@ class MainActivityResult : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val binding = ActivityMainResultBinding.inflate(layoutInflater)
-        val toolbar = binding.toolbar3
+        val binding = ActivityPlayerBinding.inflate(layoutInflater)
+        val toolbar = binding.toolbar2
 
         setContentView(binding.root)
         setSupportActionBar(toolbar)
@@ -66,11 +66,11 @@ class MainActivityResult : AppCompatActivity() {
             drawer.closeDrawers()
             when(menuItem.itemId){
                 R.id.drawer_player -> {
-                    val  intent = Intent(this, MainActivityJogador::class.java)
+                    val  intent = Intent(this, PlayerActivity::class.java)
                     true
                 }
                 R.id.drawer_result -> {
-                    val  intent = Intent(this, MainActivityResult::class.java)
+                    val  intent = Intent(this, MainActivity::class.java)
                     true
                 }
                 else -> false
@@ -110,5 +110,3 @@ class MainActivityResult : AppCompatActivity() {
         }
     }
 }
-
-

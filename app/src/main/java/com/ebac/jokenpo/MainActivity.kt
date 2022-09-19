@@ -17,9 +17,7 @@ class MainActivity : AppCompatActivity() {
 
         supportActionBar?.title = " Jokenpô"
 
-        val activity2Intent = Intent(this, MainActivityJogador::class.java)
-        intent.putExtra("name", "Gisele")
-        intent.putExtra("age", 39)
+        val activity2Intent = Intent(this, PlayerActivity::class.java)
 
         binding.startActivityButton.setOnClickListener {
             startActivity(activity2Intent)
