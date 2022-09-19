@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<item
+    android:id="@+id/drawer_player"
+    android:title="@string/drawer_player_title"/>
+    <item
+        android:id="@+id/drawer_result"
+        android:title="@string/drawer_result_title"
+        />
+</menu>
