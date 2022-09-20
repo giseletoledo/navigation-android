@@ -10,7 +10,6 @@ import androidx.drawerlayout.widget.DrawerLayout
 import com.ebac.jokenpo.databinding.ActivityPlayerBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
-import com.google.android.material.snackbar.Snackbar
 
 class PlayerActivity : AppCompatActivity() {
     lateinit var drawer: DrawerLayout
@@ -40,19 +39,11 @@ class PlayerActivity : AppCompatActivity() {
         bottomNav.setOnItemSelectedListener {
                 menuItem -> when(menuItem.itemId){
             R.id.bottom_option_1 -> {
-                Snackbar.make(
-                    drawer,
-                    getString(R.string.bottom_nav_title_1),
-                    Snackbar.LENGTH_SHORT
-                ).show()
+                carregaPlayer(PlayerActivity::class.java)
                 true
             }
             R.id.bottom_option_2 -> {
-                Snackbar.make(
-                    drawer,
-                    getString(R.string.bottom_nav_title_2),
-                    Snackbar.LENGTH_SHORT
-                ).show()
+               carregaResult(ResultActivity::class.java)
                 true
             }
             else -> false
@@ -60,23 +51,32 @@ class PlayerActivity : AppCompatActivity() {
         }
     }
 
-
     private fun setupDrawer(){
         navDrawer.setNavigationItemSelectedListener { menuItem ->
             drawer.closeDrawers()
             when(menuItem.itemId){
                 R.id.drawer_player -> {
-                    val  intent = Intent(this, PlayerActivity::class.java)
+                    carregaPlayer(PlayerActivity::class.java)
                     true
                 }
                 R.id.drawer_result -> {
-                    val  intent = Intent(this, MainActivity::class.java)
+                    carregaResult(ResultActivity::class.java)
                     true
                 }
                 else -> false
             }
 
         }
+    }
+
+    private fun carregaPlayer(activity: Class<PlayerActivity>) {
+        val activityIntent = Intent(this, activity)
+        startActivity(activityIntent)
+    }
+
+    private fun carregaResult(activity: Class<ResultActivity>) {
+        val activityIntent = Intent(this, activity)
+        startActivity(activityIntent)
     }
 
     private fun setupToolBar(){
@@ -98,12 +98,8 @@ class PlayerActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when(item.itemId){
             R.id.menu_settings -> {
-                Snackbar.make(
-                    this,
-                    drawer,
-                    getString(R.string.menu_settings_title),
-                    Snackbar.LENGTH_SHORT
-                ).show()
+                val  mainActivityIntent = Intent(this, MainActivity::class.java)
+                startActivity(mainActivityIntent)
                 true
             }
             else -> false

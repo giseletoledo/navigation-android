@@ -8,4 +8,8 @@
     <string name="drawer_result_title">Resultado</string>
     <string name="bottom_nav_title_1">Jogador 1</string>
     <string name="bottom_nav_title_2">Resultado</string>
+    <string name="player_title">Jogador 1</string>
+    <string name="result_title">Resultado</string>
+    <string name="winner_title">O jogador xxx ganhou</string>
+    <string name="select_player_text">Selecionar jogada</string>
 </resources>
