@@ -3,13 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/jokenpo_nav"
-    android:label="Resultado"
+    android:label="Home"
     app:startDestination="@id/homeFragment">
 
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.ebac.jokenpo.HomeFragment"
-        android:label="Jokenpô"
+        android:label="fragment_home"
         tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_homeFragment_to_game_nav"
@@ -26,7 +26,7 @@
         <fragment
             android:id="@+id/resultFragment"
             android:name="com.ebac.jokenpo.ResultFragment"
-            android:label="fragment_result"
+            android:label="Resultado"
             tools:layout="@layout/fragment_result" />
     </navigation>
 </navigation>

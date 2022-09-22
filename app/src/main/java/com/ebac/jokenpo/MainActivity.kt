@@ -50,7 +50,7 @@ class MainActivity : AppCompatActivity() {
 
         setupActionBarWithNavController(navController, appBarConfiguration)
         navDrawer.setupWithNavController(navController)
-        navDrawer.setupWithNavController(navController)
+        bottomNav.setupWithNavController(navController)
     }
 
     override fun onSupportNavigateUp(): Boolean {

@@ -24,6 +24,7 @@ class PlayerFragment : Fragment() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        
         inflater.inflate(R.menu.second_screen_menu, menu)
     }
 
